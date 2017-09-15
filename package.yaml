@@ -1,0 +1,66 @@
+name: sym-logging
+version: "0.1.0"
+description: symbiont logging infrastructure
+maintainer: Alex Babkin
+stability: experimental
+license: AllRightsReserved
+license-file: LICENSE
+
+extra-source-files:
+  - readme.md
+
+default-extensions:
+  - NoImplicitPrelude
+  - OverloadedStrings
+
+library:
+  source-dirs:
+    - library
+  exposed-modules:
+    - Symbiont.Logging
+    - Symbiont.Logging.Types
+    - Symbiont.Logging.Rewrite
+    - Symbiont.Logging.Katip
+  dependencies:
+    - aeson
+    - base
+    - bytestring
+    - containers
+    - exceptions
+    - katip
+    - lens
+    - lens-aeson
+    - mtl
+    - protolude
+    - stm
+    - sym-util
+    - text
+    - time
+
+tests:
+  tasty:
+    main: Test.hs
+    source-dirs: tests
+    ghc-options: -threaded -fno-warn-orphans
+    dependencies:
+      - base
+      - aeson
+      - bytestring
+      - directory
+      - katip
+      - lens
+      - lens-aeson
+      - mtl
+      - protolude
+      - silently
+      - random
+      - stm
+      - sym-logging
+      - sym-util
+      - tasty
+      - tasty-ant-xml
+      - tasty-hspec
+      - tasty-quickcheck
+      - text
+      - time
+      - unix

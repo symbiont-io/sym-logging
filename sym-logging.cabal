@@ -1,0 +1,79 @@
+-- This file has been generated from package.yaml by hpack version 0.15.0.
+--
+-- see: https://github.com/sol/hpack
+
+name:           sym-logging
+version:        0.1.0
+description:    symbiont logging infrastructure
+stability:      experimental
+maintainer:     Alex Babkin
+license:        AllRightsReserved
+license-file:   LICENSE
+build-type:     Simple
+cabal-version:  >= 1.10
+
+extra-source-files:
+    readme.md
+
+library
+  hs-source-dirs:
+      library
+  default-extensions: NoImplicitPrelude OverloadedStrings
+  build-depends:
+      aeson
+    , base
+    , bytestring
+    , containers
+    , exceptions
+    , katip
+    , lens
+    , lens-aeson
+    , mtl
+    , protolude
+    , stm
+    , sym-util
+    , text
+    , time
+  exposed-modules:
+      Symbiont.Logging
+      Symbiont.Logging.Types
+      Symbiont.Logging.Rewrite
+      Symbiont.Logging.Katip
+  other-modules:
+      Symbiont.Logging.IO
+      Paths_sym_logging
+  default-language: Haskell2010
+
+test-suite tasty
+  type: exitcode-stdio-1.0
+  main-is: Test.hs
+  hs-source-dirs:
+      tests
+  default-extensions: NoImplicitPrelude OverloadedStrings
+  ghc-options: -threaded -fno-warn-orphans
+  build-depends:
+      base
+    , aeson
+    , bytestring
+    , directory
+    , katip
+    , lens
+    , lens-aeson
+    , mtl
+    , protolude
+    , silently
+    , random
+    , stm
+    , sym-logging
+    , sym-util
+    , tasty
+    , tasty-ant-xml
+    , tasty-hspec
+    , tasty-quickcheck
+    , text
+    , time
+    , unix
+  other-modules:
+      Symbiont.Logging.Test
+      Symbiont.Logging.Test.Unit
+  default-language: Haskell2010
