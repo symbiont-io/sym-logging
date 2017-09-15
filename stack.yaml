@@ -1,0 +1,22 @@
+resolver: lts-9.4
+
+packages:
+- '.'
+
+extra-deps:
+   - cond-0.4.1.1
+
+flags: {}
+extra-package-dbs: []
+
+rebuild-ghc-options: true
+ghc-options:
+  "sym-logging":
+    -O
+    -Wall
+    -Wincomplete-record-updates
+    -Wincomplete-uni-patterns
+    -Wno-unused-do-bind
+    -fno-warn-orphans
+    -Wno-missing-signatures
+    -Werror
