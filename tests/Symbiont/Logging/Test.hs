@@ -200,7 +200,8 @@ getLoggerOutput act = bracket (mkstemp "effects-test") deleteTempFile go
     go (filepath,hdl) = do
       env <- defaultEnvironment hdl
       runIOLogger env act
-      closeEnvironment env
+      -- closeEnvironment env
+      -- uncommenting the above line makes the tests pass
       hFlush hdl
       hClose hdl
       readFile filepath
